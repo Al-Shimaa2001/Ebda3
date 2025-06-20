@@ -2,16 +2,20 @@ import { devices } from "./data/cart.js";
 let list_icon = document.querySelector(".list_icon");
 let mobileNav = document.querySelector(".mobile");
 //  on load will work
-window.onload= function(){
-shoppingOfDepartment();
-displayDevices()
-}
+window.onload = function () {
+  shoppingOfDepartment();
+  displayDevices();
+};
 
 list_icon.onclick = function () {
-  console.log("hi");
   list_icon.style.cursor = "pointer";
-  mobileNav.classList.toggle("mobile_add");
+  mobileNav.classList.add("mobile_add");
 };
+let close = document
+  .querySelector(".close_list")
+  .addEventListener("click", function () {
+    mobileNav.classList.remove("mobile_add");
+  });
 const shopping = {
   electronic: {
     img: "./images/اجهزه الكترونيه.png",
@@ -40,12 +44,12 @@ function shoppingOfDepartment() {
     const image = document.createElement("img");
     image.src = items.img;
     image.alt = items.alt;
-    image.loading='lazy'
-    image.className = 'images'
+    image.loading = "lazy";
+    image.className = "images";
     // description
     const Title = document.createElement("p");
     Title.innerHTML = items.description;
-    Title.className='title'
+    Title.className = "title";
 
     container.appendChild(card);
     card.appendChild(image);
@@ -53,14 +57,10 @@ function shoppingOfDepartment() {
   });
 }
 
-
-
-
-function displayDevices(){
-  let containerCard=''
-  devices.forEach((ele)=>{
-    
-    let showElement=`
+function displayDevices() {
+  let containerCard = "";
+  devices.forEach((ele) => {
+    let showElement = `
         <div class="card cardDevices">
         <img src="${ele.img}" alt="electronics" class='eleImg' />
         <p class='eleTitle'>${ele.title}</p>
@@ -70,22 +70,16 @@ function displayDevices(){
         <span class="ion--bag-outline"></span>
         <span>اضف للسله</span>
         </div>
-        </div>`
-        containerCard+= showElement
-       document.querySelector('.cards').innerHTML= containerCard 
-
-      
-       
-  })
+        </div>`;
+    containerCard += showElement;
+    document.querySelector(".cards").innerHTML = containerCard;
+  });
 }
-
-
-
 
 // const cards= document.querySelector('.cards')
 // function eleDevices(){
 //   Object.values(devices).forEach((items)=>{
-//     // card 
+//     // card
 //     let card =document.createElement('div')
 //     card.className='cardDevices'
 // // add image to card
@@ -98,7 +92,6 @@ function displayDevices(){
 // title.innerHTML = items.title
 // title.className='title'
 
-
 // // add to body
 // cards.appendChild(card)
 // card.appendChild(image)
@@ -109,23 +102,27 @@ function displayDevices(){
 let slideIndex = 1;
 showSlides(slideIndex);
 function plusSlides(n) {
-  showSlides(slideIndex += n);
+  showSlides((slideIndex += n));
 }
 function currentSlide(n) {
-  showSlides(slideIndex = n);
+  showSlides((slideIndex = n));
 }
 function showSlides(n) {
   let i;
   let slides = document.getElementsByClassName("mySlides");
   let dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
+  if (n > slides.length) {
+    slideIndex = 1;
+  }
+  if (n < 1) {
+    slideIndex = slides.length;
+  }
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
   }
   for (i = 0; i < dots.length; i++) {
     dots[i].className = dots[i].className.replace(" active", "");
   }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
+  slides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].className += " active";
 }
