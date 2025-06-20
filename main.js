@@ -61,22 +61,23 @@ function shoppingOfDepartment() {
     card.appendChild(image);
     card.appendChild(Title);
   });
-  document.querySelectorAll('.card').forEach((card , i)=>{
-    card.addEventListener('click', function(){
-    if(i == 0){
-      document.querySelector('#electronics').scrollIntoView({behavior:"smooth", block:'start'})
-    }
-    else if(i == 1){
-      console.log('its second')
-    }else{
-      console.log('end')
-    }
-  })
-  })
+  document.querySelectorAll(".card").forEach((card, i) => {
+    card.addEventListener("click", function () {
+      if (i == 0) {
+        document
+          .querySelector("#electronics")
+          .scrollIntoView({ behavior: "smooth", block: "start" });
+      } else if (i == 1) {
+        console.log("its second");
+      } else {
+        console.log("end");
+      }
+    });
+  });
 }
 
 function displayDevices() {
-  let quantity=0;
+  let quantity = 0;
   let containerCard = "";
   devices.forEach((ele) => {
     let showElement = `
@@ -93,15 +94,20 @@ function displayDevices() {
     containerCard += showElement;
     document.querySelector(".cards").innerHTML = containerCard;
   });
-  document.querySelectorAll('.hide').forEach((addToCart, i)=>{
-    addToCart.addEventListener('click', ()=>{
-      quantity+=1
-      document.querySelectorAll('.showItems').forEach((quantityValue)=>{
+  document.querySelectorAll(".hide").forEach((addToCart, i) => {
+    addToCart.addEventListener("click", () => {
+      quantity += 1;
+      document.querySelectorAll(".showItems").forEach((quantityValue) => {
         // quantityValue.innerHTML += quantityValueHtml
-        console.log(quantityValue.innerHTML = quantity)
-        quantityValue.innerHTML = quantity
-
-      })
-    })
-  })
+        console.log((quantityValue.innerHTML = quantity));
+        quantityValue.innerHTML = quantity;
+        // Show popup
+        const popup = document.querySelector(".cart-popup");
+        popup.style.display = "flex";
+        setTimeout(() => {
+          popup.style.display = "none";
+        }, 3000);
+      });
+    });
+  });
 }

@@ -55,12 +55,12 @@
         <div
           class="hidden lg:flex items-center gap-4 me-[80px] my-[34px] ms-[41px]"
         >
-          <div class="cart_icon relative">
+          <div class="cart_icon relative w-[26px] h-[26px]">
             <img
               src="./images/mdi_cart-outline.svg"
               alt="cart-icon"
-              width="26.5"
-              height="26.5"
+              width="100%"
+              height="100%"
               loading="eager"
               densities="1x 2x"
             />
@@ -179,11 +179,17 @@
       <section class="electronic">
         <div class="container cards" id="cardsContainer"></div>
       </section>
+      <div id="cartPopup" class="cart-popup">
+        <div class="popup-content">
+          <span class="popup-icon">✓</span>
+          <p>تمت الإضافة إلى السلة بنجاح</p>
+        </div>
+      </div>
     </section>
     <!--  in your world -->
     <section class="your_world lg:p-20 md:p-16">
       <div class="grid lg:grid-cols-2 grid-cols-1 justify-center items-center">
-        <div class="order-2 lg:order-1 m-2 p-2">
+        <div class="order-2 lg:order-1 m-2 p-2 text-center lg:text-right">
           <h2 class="font-bold text-[56px] text-[#001A1E]">
             غُص في عالمك الخاص!
           </h2>
