@@ -55,7 +55,8 @@
         <div
           class="hidden lg:flex items-center gap-4 me-[80px] my-[34px] ms-[41px]"
         >
-          <img
+         <div  class="cart_icon relative">
+           <img
             src="./images/mdi_cart-outline.svg"
             alt="cart-icon"
             width="26.5"
@@ -63,6 +64,8 @@
             loading="eager"
             densities="1x 2x"
           />
+          <span class="showItems absolute bottom-5 text-red-600 right-2 font-bold">0</span>
+         </div>
           <img
             src="./images/language.svg"
             alt="cart-icon"
@@ -70,6 +73,7 @@
             height="26.5"
             loading="eager"
             densities="1x 2x"
+            
           />
           <img
             src="./images/uiw_setting-o.svg"
@@ -78,6 +82,7 @@
             height="26.5"
             loading="eager"
             densities="1x 2x"
+         
           />
         </div>
       </nav>
@@ -105,13 +110,25 @@
                 densities="1x 2x"
             /></span>
             <div class="">
-             <div class="text-left close_list ">
-               <span class="fluent-mdl2--error-badge "></span>
-             </div>
+              <div class="text-left close_list">
+                <span class="fluent-mdl2--error-badge" title="close"></span>
+              </div>
               <p class="font-[400] text-[18px]">مرحبا بك</p>
               <p class="font-bold text-[18px] text-[#001A1E]">تسجيل دخول</p>
             </div>
           </div>
+        </div>
+        <div class="flex items-start cart_icon relative ">
+
+          <img
+            src="./images/mdi_cart-outline.svg"
+            alt="cart-icon"
+            width="26.5"
+            height="26.5"
+            loading="eager"
+            densities="1x 2x"
+          />
+           <span class="showItems absolute bottom-5 text-red-600 right-2">0</span>
         </div>
         <div
           class="mt-3 border-2 rounded-xl flex items-center font-bold text-xl"
@@ -130,7 +147,8 @@
           جاهز تعيش تجربة تقنية <span class="text-[#004956]">مختلفة</span> أحدث
           الأجهزة بانتظارك!
         </p>
-        <button id="shooping_now"
+        <button
+          id="shopping_now"
           class="lg:w-[222px] lg:h-[74px] bg-[#004956] text-white font-bold md:text-[25px] lg:text-[32px] text-center p-[15px] lg:px-[36px] rounded-xl my-[40px]"
         >
           تسوق الان
@@ -138,7 +156,7 @@
       </section>
     </header>
     <!--  shooping section -->
-    <section id="shooping" class="flex flex-col justify-center items-center">
+    <section id="shopping" class="flex flex-col justify-center items-center">
       <h2
         class="w-full h-[52px] font-bold text-[40px] text-[#001A1E] text-center lg:my-10"
       >
@@ -148,7 +166,7 @@
       <div class="departments container"></div>
     </section>
     <!-- electronic section -->
-    <section class="md:mx-40 mx-10">
+    <section class="md:mx-40 mx-10" id="electronics">
       <div class="flex justify-between items-center mx-4">
         <h2 class="font-bold text-[40px]">اجهزه الكترونيه</h2>
         <div class="flex gap-6 arrow">

@@ -67,6 +67,7 @@ header {
   background-repeat: no-repeat;
   height: 80vh;
   width: 100%;
+  margin-bottom: 20%;
 }
 .mobile_add {
   display: block;
@@ -172,6 +173,7 @@ header {
 .close_list{
   cursor: pointer;
 }
+#shooping_now{cursor: pointer;}
 /* media screen */
 @media screen and (min-width: 890px) {
   header {

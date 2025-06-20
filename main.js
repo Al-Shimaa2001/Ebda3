@@ -6,13 +6,6 @@ window.onload = function () {
   shoppingOfDepartment();
   displayDevices();
 };
-
-document.querySelector("#shooping_now").addEventListener("click", function () {
-  document
-    .querySelector("#shooping")
-    .scrollIntoView({ behavior: "smooth", block: "start" });
-});
-
 // open & closing list of nav
 list_icon.onclick = function () {
   list_icon.style.cursor = "pointer";
@@ -21,6 +14,13 @@ list_icon.onclick = function () {
 document.querySelector(".close_list").addEventListener("click", function () {
   mobileNav.classList.remove("mobile_add");
 });
+// scroll to shopping section
+document.querySelector("#shopping_now").addEventListener("click", function () {
+  document
+    .querySelector("#shopping")
+    .scrollIntoView({ behavior: "smooth", block: "start" });
+});
+
 //  clist of shoping options
 const shopping = {
   electronic: {
@@ -61,9 +61,22 @@ function shoppingOfDepartment() {
     card.appendChild(image);
     card.appendChild(Title);
   });
+  document.querySelectorAll('.card').forEach((card , i)=>{
+    card.addEventListener('click', function(){
+    if(i == 0){
+      document.querySelector('#electronics').scrollIntoView({behavior:"smooth", block:'start'})
+    }
+    else if(i == 1){
+      console.log('its second')
+    }else{
+      console.log('end')
+    }
+  })
+  })
 }
 
 function displayDevices() {
+  let quantity=0;
   let containerCard = "";
   devices.forEach((ele) => {
     let showElement = `
@@ -80,4 +93,15 @@ function displayDevices() {
     containerCard += showElement;
     document.querySelector(".cards").innerHTML = containerCard;
   });
+  document.querySelectorAll('.hide').forEach((addToCart, i)=>{
+    addToCart.addEventListener('click', ()=>{
+      quantity+=1
+      document.querySelectorAll('.showItems').forEach((quantityValue)=>{
+        // quantityValue.innerHTML += quantityValueHtml
+        console.log(quantityValue.innerHTML = quantity)
+        quantityValue.innerHTML = quantity
+
+      })
+    })
+  })
 }
