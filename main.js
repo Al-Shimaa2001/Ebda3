@@ -7,15 +7,21 @@ window.onload = function () {
   displayDevices();
 };
 
+document.querySelector("#shooping_now").addEventListener("click", function () {
+  document
+    .querySelector("#shooping")
+    .scrollIntoView({ behavior: "smooth", block: "start" });
+});
+
+// open & closing list of nav
 list_icon.onclick = function () {
   list_icon.style.cursor = "pointer";
   mobileNav.classList.add("mobile_add");
 };
-let close = document
-  .querySelector(".close_list")
-  .addEventListener("click", function () {
-    mobileNav.classList.remove("mobile_add");
-  });
+document.querySelector(".close_list").addEventListener("click", function () {
+  mobileNav.classList.remove("mobile_add");
+});
+//  clist of shoping options
 const shopping = {
   electronic: {
     img: "./images/اجهزه الكترونيه.png",
@@ -74,55 +80,4 @@ function displayDevices() {
     containerCard += showElement;
     document.querySelector(".cards").innerHTML = containerCard;
   });
-}
-
-// const cards= document.querySelector('.cards')
-// function eleDevices(){
-//   Object.values(devices).forEach((items)=>{
-//     // card
-//     let card =document.createElement('div')
-//     card.className='cardDevices'
-// // add image to card
-// let image = document.createElement('img')
-// image.src= items.img
-// image.alt= items.img
-// image.loading='lazy'
-// // add title
-// let title = document.createElement('h2')
-// title.innerHTML = items.title
-// title.className='title'
-
-// // add to body
-// cards.appendChild(card)
-// card.appendChild(image)
-// card.appendChild(title)
-//   })
-// }
-//  slide show
-let slideIndex = 1;
-showSlides(slideIndex);
-function plusSlides(n) {
-  showSlides((slideIndex += n));
-}
-function currentSlide(n) {
-  showSlides((slideIndex = n));
-}
-function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {
-    slideIndex = 1;
-  }
-  if (n < 1) {
-    slideIndex = slides.length;
-  }
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex - 1].style.display = "block";
-  dots[slideIndex - 1].className += " active";
 }

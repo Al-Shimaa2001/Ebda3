@@ -169,6 +169,9 @@ header {
   height: 100%;
   margin: 10% 0;
 }
+.close_list{
+  cursor: pointer;
+}
 /* media screen */
 @media screen and (min-width: 890px) {
   header {
