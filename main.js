@@ -111,3 +111,12 @@ function displayDevices() {
     });
   });
 }
+
+const scrollToTop = document.querySelector('.return_top')
+scrollToTop.addEventListener('click', function(e) {
+  e.preventDefault();
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
