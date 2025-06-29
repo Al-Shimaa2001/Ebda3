@@ -1,0 +1,26 @@
+.logo-cart {
+  display: flex;
+  justify-content: end;
+}
+.logo-cart img {
+  padding: 10px;
+}
+.cartsItems {
+  margin: 40px 80px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px ,1fr));
+  gap: 32px;
+  justify-content: center;
+  align-items: center;
+}
+.cart-title {
+  text-align: center;
+  text-transform: capitalize;
+}
+.delete-from-cart {
+  background-color: rgb(192, 24, 24) !important;
+}
+.delete-from-cart:hover {
+  background-color: rgb(145, 8, 8) !important;
+  cursor: grab;
+}
