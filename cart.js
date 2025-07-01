@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
                  <span class="ion--bag-outline"></span>
                  <span>احذف من السله</span>
                  </div>
-                </div>`;
+               </div>`;
     document.querySelector(".cartsItems").innerHTML = cartHtml;
   });
   document.querySelectorAll(".delete-from-cart").forEach((deleteCartItem) => {
@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
       deleteItemFromCart(itemId);
       let container = document.querySelector(`.js-cart-item-${itemId}`);
       container.remove();
+      popupAlert()
     });
   });
 });
@@ -32,8 +33,8 @@ function deleteItemFromCart(productId) {
   });
 
   cart = newCart;
-  saveToLocalStorage();
   updateQuantity(quantity - 1);
+  saveToLocalStorage();
 }
 export function saveToLocalStorage() {
   localStorage.setItem("cartItems", JSON.stringify(cart));
@@ -44,7 +45,7 @@ export function calculateQuantity() {
   updateQuantity();
   saveQuantityInStorage();
 }
-export function updateQuantity() {
+export function updateQuantity(quantity) {
   document.querySelectorAll(".showItems").forEach((quantityValue) => {
     quantityValue.innerHTML = quantity;
   });
@@ -54,3 +55,28 @@ export function updateQuantity() {
 export function saveQuantityInStorage() {
   localStorage.setItem("quantity", JSON.stringify(quantity));
 }
+
+function popupAlert() {
+  // Show popup
+  const popup = document.querySelector(".cart-popup");
+  popup.style.display = "flex";
+  setTimeout(() => {
+    popup.style.display = "none";
+  }, 3000);
+}
+// let myPromise = new Promise ((result, reject)=>{
+//   if(!cart){
+//     result(console.log('it success'))
+
+//   }else{
+
+//     reject(console.log('it failed'))
+//   }
+// })
+// myPromise.then((result)=>{
+//   result= cart
+//   console.log(result)
+// })
+// .catch((reject)=>{
+// console.log(Error( 'it rejected' + ' '+ reject))
+// })

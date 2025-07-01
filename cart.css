@@ -13,14 +13,60 @@
   justify-content: center;
   align-items: center;
 }
+.eleTitle{
+text-align: end !important;
+margin: 0;
+}
 .cart-title {
   text-align: center;
   text-transform: capitalize;
 }
 .delete-from-cart {
   background-color: rgb(192, 24, 24) !important;
+  transform: translateY(10%) !important;
 }
 .delete-from-cart:hover {
   background-color: rgb(145, 8, 8) !important;
   cursor: grab;
+}
+.cart-popup {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #b1323c !important;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  gap: 10px;
+  animation: slideIn 0.5s, fadeOut 0.5s 2.5s forwards;
+}
+
+.popup-icon {
+  font-size: 24px;
+  font-weight: bold;
+  display: inline-block;
+  text-align: end;
+  width: 100%;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }

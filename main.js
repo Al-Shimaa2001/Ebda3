@@ -3,14 +3,11 @@ import {
   cart,
   saveToLocalStorage,
   calculateQuantity,
-  updateQuantity,
-  saveQuantityInStorage,
+
 } from "./cart.js";
 let list_icon = document.querySelector(".list_icon");
 let mobileNav = document.querySelector(".mobile");
-document.addEventListener("DOMContentLoaded", () => {
-  updateQuantity();
-});
+
 // open & closing list of nav
 list_icon.onclick = function () {
   list_icon.style.cursor = "pointer";
@@ -134,3 +131,7 @@ scrollToTop.addEventListener("click", function (e) {
     behavior: "smooth",
   });
 });
+
+let date = new Date()
+document.querySelector('.date').innerHTML=` الحقوق محفوظه | TEQZON ${date.getFullYear()}
+     `
