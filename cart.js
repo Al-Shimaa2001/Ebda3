@@ -1,29 +1,35 @@
 export let cart = JSON.parse(localStorage.getItem("cartItems")) || [];
+// let quantity = JSON.parse(localStorage.getItem("quantity")) || 0;
+let quantity = cart.length;
 document.addEventListener("DOMContentLoaded", () => {
+  updateQuantity();
   let cartHtml = "";
   cart.forEach((ele, i) => {
-    cartHtml += `<div class="card cardDevices js-cart-item-${ele.id}">
+    cartHtml += `
+     <div class="card cardDevices js-cart-item-${ele.id}">
                 <img src="${ele.img}" alt="electronics" class='eleImg' />
                 <p class='eleTitle'>${ele.title}</p>
-                <div class="details">${ele.description}</div>
+                <article class="details">${ele.description}</article>
                 <p class='salary'>${ele.price}</p>
                 <div class='hide delete-from-cart' data-product-id=${ele.id}>
                  <span class="ion--bag-outline"></span>
                  <span>احذف من السله</span>
                  </div>
                </div>`;
-    document.querySelector(".cartsItems").innerHTML = cartHtml;
   });
+  document.querySelector(".cartsItems").innerHTML = cartHtml;
+
   document.querySelectorAll(".delete-from-cart").forEach((deleteCartItem) => {
     deleteCartItem.addEventListener("click", () => {
       let itemId = deleteCartItem.dataset.productId;
       deleteItemFromCart(itemId);
       let container = document.querySelector(`.js-cart-item-${itemId}`);
       container.remove();
-      popupAlert()
+      popupAlert();
     });
   });
 });
+
 function deleteItemFromCart(productId) {
   let newCart = [];
   cart.forEach((cardItem) => {
@@ -33,28 +39,30 @@ function deleteItemFromCart(productId) {
   });
 
   cart = newCart;
-  updateQuantity(quantity - 1);
   saveToLocalStorage();
+  updateQuantity();
+  // saveQuantityInStorage();
 }
 export function saveToLocalStorage() {
   localStorage.setItem("cartItems", JSON.stringify(cart));
 }
-let quantity = JSON.parse(localStorage.getItem("quantity")) || 0;
 export function calculateQuantity() {
-  quantity += 1;
+  quantity = cart.length;
   updateQuantity();
-  saveQuantityInStorage();
 }
-export function updateQuantity(quantity) {
+export function updateQuantity() {
   document.querySelectorAll(".showItems").forEach((quantityValue) => {
     quantityValue.innerHTML = quantity;
   });
 }
+// console.log(updateQuantity)
+// console.log(saveQuantityInStorage)
 // save to local storage
 
-export function saveQuantityInStorage() {
-  localStorage.setItem("quantity", JSON.stringify(quantity));
-}
+// export function saveQuantityInStorage() {
+//   localStorage.setItem("quantity", JSON.stringify(quantity));
+// }
+console.log(quantity);
 
 function popupAlert() {
   // Show popup
@@ -64,19 +72,3 @@ function popupAlert() {
     popup.style.display = "none";
   }, 3000);
 }
-// let myPromise = new Promise ((result, reject)=>{
-//   if(!cart){
-//     result(console.log('it success'))
-
-//   }else{
-
-//     reject(console.log('it failed'))
-//   }
-// })
-// myPromise.then((result)=>{
-//   result= cart
-//   console.log(result)
-// })
-// .catch((reject)=>{
-// console.log(Error( 'it rejected' + ' '+ reject))
-// })

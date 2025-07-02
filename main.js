@@ -1,10 +1,5 @@
 import { devices } from "./data/cart.js";
-import {
-  cart,
-  saveToLocalStorage,
-  calculateQuantity,
-
-} from "./cart.js";
+import { cart, saveToLocalStorage, calculateQuantity } from "./cart.js";
 let list_icon = document.querySelector(".list_icon");
 let mobileNav = document.querySelector(".mobile");
 
@@ -132,6 +127,8 @@ scrollToTop.addEventListener("click", function (e) {
   });
 });
 
-let date = new Date()
-document.querySelector('.date').innerHTML=` الحقوق محفوظه | TEQZON ${date.getFullYear()}
-     `
+let date = new Date();
+document.querySelector(
+  ".date"
+).innerHTML = ` الحقوق محفوظه | TEQZON ${date.getFullYear()}
+     `;

@@ -7,15 +7,13 @@
 }
 .cartsItems {
   margin: 40px 80px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px ,1fr));
-  gap: 32px;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
-.eleTitle{
-text-align: end !important;
-margin: 0;
+.eleTitle {
+  text-align: end !important;
+  margin: 0;
 }
 .cart-title {
   text-align: center;
@@ -52,7 +50,21 @@ margin: 0;
   text-align: end;
   width: 100%;
 }
-
+.cardDevices {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 1em;
+  width: 250px;
+  margin: 0 10px;
+}
+.cardDevices:hover .hide {
+  position: absolute;
+  bottom: 50%;
+  width: 70% !important;
+  margin: 0 10% !important;
+  padding: 10px;
+  right: 10px;
+}
 @keyframes slideIn {
   from {
     transform: translateX(100%);
