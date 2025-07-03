@@ -62,7 +62,7 @@
 }
 /*  body style */
 header {
-  background-image: url("./images/hero.png");
+  background-image: url("../images/hero.png");
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
@@ -70,9 +70,13 @@ header {
   margin-bottom: 20%;
   overflow: hidden;
 }
+.cart_icon img {
+  max-width: none;
+}
 .mobile_add {
   display: block;
 }
+
 .container {
   margin: 40px 80px;
   display: grid;
@@ -96,7 +100,8 @@ header {
   margin: 32px 0;
 }
 
-.electronic {
+.electronic,
+.headphone {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -132,11 +137,13 @@ header {
   max-inline-size: 200;
   aspect-ratio: 1/1;
 }
-.hide {
+.hide,
+.headphoneAddToCart {
   display: none;
 }
 
-.cardDevices:hover .hide {
+.cardDevices:hover .hide,
+.cardDevices:hover .headphoneAddToCart {
   display: inline-block;
   text-align: center;
   background-color: #002127;
@@ -168,7 +175,7 @@ header {
   color: #004956;
 }
 .your_world {
-  background-image: url('../images/in _your_world.png');
+  background-image: url("../images/in _your_world.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -278,27 +285,33 @@ footer {
   .title {
     font-size: 32px;
   }
-  .cardDevices:hover .hide {
+
+  .cardDevices:hover .hide,
+  .cardDevices:hover .headphoneAddToCart {
     bottom: 34%;
   }
 }
 @media screen and (max-width: 840px) {
-  .cardDevices:hover .hide {
+  .cardDevices:hover .hide,
+  .cardDevices:hover .headphoneAddToCart {
     bottom: 20%;
   }
 }
 @media screen and (max-width: 640px) {
-  .cardDevices:hover .hide {
+  .cardDevices:hover .hide,
+  .cardDevices:hover .headphoneAddToCart {
     bottom: 22%;
   }
 }
 @media screen and (max-width: 440px) {
-  .cardDevices:hover .hide {
+  .cardDevices:hover .hide,
+  .cardDevices:hover .headphoneAddToCart {
     bottom: 35%;
   }
 }
 @media screen and (min-width: 640px) {
-  .cardDevices:hover .hide {
+  .cardDevices:hover .hide,
+  .cardDevices:hover .headphoneAddToCart {
     bottom: 35%;
   }
 }

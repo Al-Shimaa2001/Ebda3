@@ -29,3 +29,4 @@ export const devices = [
     price: "49.49 ر.س",
   },
 ];
+

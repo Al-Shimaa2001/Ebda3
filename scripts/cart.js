@@ -1,10 +1,9 @@
 export let cart = JSON.parse(localStorage.getItem("cartItems")) || [];
-// let quantity = JSON.parse(localStorage.getItem("quantity")) || 0;
 let quantity = cart.length;
 document.addEventListener("DOMContentLoaded", () => {
   updateQuantity();
   let cartHtml = "";
-  cart.forEach((ele, i) => {
+  cart.forEach((ele) => {
     cartHtml += `
      <div class="card cardDevices js-cart-item-${ele.id}">
                 <img src="${ele.img}" alt="electronics" class='eleImg' />
@@ -16,8 +15,8 @@ document.addEventListener("DOMContentLoaded", () => {
                  <span>احذف من السله</span>
                  </div>
                </div>`;
-  });
-  document.querySelector(".cartsItems").innerHTML = cartHtml;
+              });
+              document.querySelector(".cartsItems").innerHTML = cartHtml;
 
   document.querySelectorAll(".delete-from-cart").forEach((deleteCartItem) => {
     deleteCartItem.addEventListener("click", () => {
@@ -41,7 +40,6 @@ function deleteItemFromCart(productId) {
   cart = newCart;
   saveToLocalStorage();
   updateQuantity();
-  // saveQuantityInStorage();
 }
 export function saveToLocalStorage() {
   localStorage.setItem("cartItems", JSON.stringify(cart));
@@ -55,20 +53,15 @@ export function updateQuantity() {
     quantityValue.innerHTML = quantity;
   });
 }
-// console.log(updateQuantity)
-// console.log(saveQuantityInStorage)
-// save to local storage
-
-// export function saveQuantityInStorage() {
-//   localStorage.setItem("quantity", JSON.stringify(quantity));
-// }
-console.log(quantity);
 
 function popupAlert() {
   // Show popup
-  const popup = document.querySelector(".cart-popup");
-  popup.style.display = "flex";
-  setTimeout(() => {
-    popup.style.display = "none";
-  }, 3000);
+  if(cart){
+
+    const popup = document.querySelector(".cart-popup");
+    popup.style.display = "flex";
+    setTimeout(() => {
+      popup.style.display = "none";
+    }, 3000);
+  }
 }

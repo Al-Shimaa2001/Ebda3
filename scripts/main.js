@@ -1,4 +1,5 @@
 import { devices } from "../data/cart.js";
+import { headphones } from "./headphones.js";
 import { cart, saveToLocalStorage, calculateQuantity } from "./cart.js";
 let list_icon = document.querySelector(".list_icon");
 let mobileNav = document.querySelector(".mobile");
@@ -64,7 +65,10 @@ document.querySelectorAll(".card").forEach((card, i) => {
         .querySelector("#electronics")
         .scrollIntoView({ behavior: "smooth", block: "start" });
     } else if (i == 1) {
-      console.log("its second");
+      document.querySelector("#headphone").scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
     } else {
       console.log("end");
     }
@@ -87,8 +91,8 @@ devices.forEach((ele) => {
         </div>
         </div>`;
   containerCard += showElement;
-  document.querySelector(".cards").innerHTML = containerCard;
 });
+document.querySelector(".cards").innerHTML = containerCard;
 
 document.querySelectorAll(".hide").forEach((addToCart, i) => {
   addToCart.addEventListener("click", () => {
@@ -116,6 +120,38 @@ function popupAlert() {
     popup.style.display = "none";
   }, 3000);
 }
+// headphones
+let headphoneSection = "";
+headphones.forEach((ele) => {
+  headphoneSection += ` <div class="card cardDevices">
+        <img src="${ele.img}" alt="electronics" class='eleImg' />
+        <p class='eleTitle'>${ele.title}</p>
+        <div class="details">${ele.description}</div>
+        <p class='salary'>${ele.price}</p>
+        <div class='headphoneAddToCart' data-headphone-id=${ele.id}>
+        <span class="ion--bag-outline"></span>
+        <span>اضف للسله</span>
+        </div>
+        </div>`;
+});
+document.querySelector(".headphoneCards").innerHTML = headphoneSection;
+document.querySelectorAll(".headphoneAddToCart").forEach((addToCart) => {
+  addToCart.addEventListener("click", () => {
+    let headphone = addToCart.dataset.headphoneId;
+    let matchingItem;
+    headphones.forEach((items) => {
+      if (headphone === items.id) {
+        matchingItem = items;
+      }
+    });
+    cart.push(matchingItem);
+    if (cart) {
+      calculateQuantity();
+    }
+    saveToLocalStorage();
+    popupAlert();
+  });
+});
 
 // footer button scroll to top
 const scrollToTop = document.querySelector(".return_top");
