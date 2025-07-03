@@ -168,7 +168,7 @@ header {
   color: #004956;
 }
 .your_world {
-  background-image: url(./images/in\ _your_world.png);
+  background-image: url('../images/in _your_world.png');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
@@ -229,13 +229,33 @@
         </div>
       </div>
     </article>
-    <!-- footer -->
+    <!-- headphone  -->
+    <section class="md:mx-40 mx-10" id="electronics" data-aos="fade-up">
+      <div class="flex justify-between items-center mx-4">
+        <h2 class="font-bold text-[40px]"> سماعات</h2>
+        <div class="flex gap-6 arrow">
+          <span class="icon-park-outline--right right-arrow"></span>
+          <span class="icon-park-outline--left left-arrow"></span>
+        </div>
+      </div>
+      <section class="electronic">
+        <div
+          class="container cards"
+          id="cardsContainer"
+          data-aos="zoom-in"
+        ></div>
+      </section>
+      <div id="cartPopup" class="cart-popup">
+        <div class="popup-content">
+          <span class="popup-icon">✓</span>
+          <p>تمت الإضافة إلى السلة بنجاح</p>
+        </div>
+      </div>
+    </section> 
+ <!-- footer -->
     <section>
       <div class="relative">
-        <button
-          class="return_top px-10 py-2 hover:bg-red-900"
-         
-        >
+        <button class="return_top px-10 py-2 hover:bg-red-900">
           الرجوع للأعلى
         </button>
       </div>
@@ -307,10 +327,12 @@
         <p class="date"></p>
       </div>
     </section>
+
+    
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
       AOS.init();
     </script>
-    <script type="module" src="./main.js"></script>
+    <script type="module" src="./scripts/main.js"></script>
   </body>
 </html>
