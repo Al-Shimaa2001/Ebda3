@@ -1,4 +1,4 @@
-import { devices } from "./data/cart.js";
+import { devices } from "../data/cart.js";
 import { cart, saveToLocalStorage, calculateQuantity } from "./cart.js";
 let list_icon = document.querySelector(".list_icon");
 let mobileNav = document.querySelector(".mobile");
