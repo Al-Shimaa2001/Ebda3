@@ -1,6 +1,7 @@
 import { devices } from "../data/cart.js";
 import { headphones } from "../data/headphones.js";
 import { battery } from "../data/battery.js";
+import { clients } from "../data/clientsOpinion.js";
 
 import { cart, saveToLocalStorage, calculateQuantity } from "./cart.js";
 
@@ -81,13 +82,13 @@ document.querySelectorAll(".card").forEach((card, i) => {
   });
 });
 // search input
-const search = document.querySelector(".search_input");
-search.addEventListener("input", (e) => {
-  let valueSearch = e.target.value;
-  cart.forEach((ele) => {
-    ele.title.includes(valueSearch);
-  });
-});
+// const search = document.querySelector(".search_input");
+// search.addEventListener("input", (e) => {
+//   let valueSearch = e.target.value;
+//   cart.forEach((ele) => {
+//     ele.title.includes(valueSearch);
+//   });
+// });
 // electronic devices cart
 
 let containerCard = "";
@@ -208,12 +209,31 @@ document.querySelectorAll(".batteryAddToCart").forEach((addToCart) => {
     popupAlert();
   });
 });
+//  add to favorite 
 document.querySelectorAll(".cardDevices").forEach((card) => {
   card.addEventListener("dblclick", function () {
     card.classList.toggle("active");
   });
 });
-
+// clients sections
+let clientsOpinion = "";
+clients.forEach((client) => {
+  clientsOpinion += `  <div class='opinion'>
+  <p class='text-[#003741] text-[20px]'>${client.title}</p>
+  <div class="client-details">
+  <div class="clients-profile  ">
+  <img src="${client.profile}" alt="clients profile"/>
+  </div>
+         <div>
+          <p class="text-[#001A1E] font-bold text-[24px]">${client.userName}</p>
+          <span class='rating'>
+          <img src="${client.rating}" alt="rating"/>
+          </span>
+         </div>
+        </div>
+      </div>`;
+});
+document.querySelector(".clients").innerHTML = clientsOpinion;
 // footer button scroll to top
 const scrollToTop = document.querySelector(".return_top");
 scrollToTop.addEventListener("click", function (e) {
