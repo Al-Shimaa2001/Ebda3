@@ -80,14 +80,23 @@ document.querySelectorAll(".card").forEach((card, i) => {
     }
   });
 });
-
+// search input
+const search = document.querySelector(".search_input");
+search.addEventListener("input", (e) => {
+  let valueSearch = e.target.value;
+  cart.forEach((ele) => {
+    ele.title.includes(valueSearch);
+  });
+});
 // electronic devices cart
 
 let containerCard = "";
-devices.forEach((ele) => {
+devices.map((ele) => {
   let showElement = `
-        <div class="card cardDevices">
-        <img src="${ele.img}" alt="electronics" class='eleImg' />
+        <div class="card cardDevices" 
+        title="اضغط مرتين للاضافة الى المفضله">
+        <img src="${ele.img}" alt="electronics" class='eleImg'
+           />
         <p class='eleTitle'>${ele.title}</p>
         <div class="details">${ele.description}</div>
         <p class='salary'>${ele.price}</p>
@@ -129,9 +138,9 @@ function popupAlert() {
 // headphones
 let headphoneSection = "";
 headphones.forEach((ele) => {
-  headphoneSection += ` <div class="card cardDevices">
+  headphoneSection += ` <div class="card cardDevices" title="اضغط مرتين للاضافة الى المفضله">
         <img src="${ele.img}" alt="electronics" class='eleImg' />
-        <p class='eleTitle'>${ele.title}</p>
+ <p class='eleTitle'>${ele.title}</p>
         <div class="details">${ele.description}</div>
         <p class='salary'>${ele.price}</p>
         <button  class='headphoneAddToCart' data-headphone-id=${ele.id}>
@@ -166,8 +175,9 @@ let batterySection = "";
 
 battery.forEach((ele) => {
   batterySection += `
-   <div class="card cardDevices">
-        <img src="${ele.img}" alt="electronics" class='eleImg' />
+   <div class="card cardDevices" title="اضغط مرتين للاضافة الى المفضله" >
+        <img src="${ele.img}" alt="electronics" class='eleImg' 
+       />
         <p class='eleTitle'>${ele.title}</p>
         <div class="details">${ele.description}</div>
         <p class='salary'>${ele.price}</p>
@@ -196,6 +206,11 @@ document.querySelectorAll(".batteryAddToCart").forEach((addToCart) => {
     }
     saveToLocalStorage();
     popupAlert();
+  });
+});
+document.querySelectorAll(".cardDevices").forEach((card) => {
+  card.addEventListener("dblclick", function () {
+    card.classList.toggle("active");
   });
 });
 
