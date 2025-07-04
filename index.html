@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="rtl">
+<html lang="ar" dir="rtl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -57,7 +57,7 @@
           class="hidden lg:flex items-center gap-4 me-[80px] my-[34px] ms-[41px]"
         >
           <div class="cart_icon relative">
-            <a href="cart.html">
+            <a href="cart.html" role="button">
               <img
                 src="./images/mdi_cart-outline.svg"
                 alt="cart-icon"
@@ -252,6 +252,26 @@
         </div>
       </div>
     </section>
+    <!-- battery  -->
+    <section class="md:mx-40 mx-10  " id="battery" data-aos="fade-down">
+      <section class="battery ">
+        <div
+        class="container batteryCards"
+        id="cardsContainer"
+        data-aos="zoom-in"
+        >
+       
+      
+      
+      </div>
+      </section>
+      <div id="cartPopup" class="cart-popup">
+        <div class="popup-content">
+          <span class="popup-icon">✓</span>
+          <p>تمت الإضافة إلى السلة بنجاح</p>
+        </div>
+      </div>
+    </section>
     <!-- footer -->
     <section>
       <div class="relative">
@@ -268,11 +288,11 @@
             densities="1x 2x"
             class="w-[138px] lg:h-[40px] my-[30px]"
           />
-          <p class="text-[#003741] text-[18px]">
+          <article class="text-[#003741] text-[18px]">
             تيكزون، متجر إلكتروني في المملكة العربية السعودية في جدة ويقدم
             العديد من المنتجات الإلكترونية من قطع وإكسسوارات وألعاب الأطفال,
             وغيرها من تسهيلات الحياة، خدماتنا لجميع دول الخليج العربي
-          </p>
+          </article>
         </div>
         <div>
           <h2 class="text-[#001A1E] font-bold text-[24px]">روابط مهمه</h2>
@@ -287,36 +307,44 @@
           <h2 class="text-[24px] text-[#001A1E] font-bold">تواصل معنا</h2>
           <div class="flex gap-4 my-4">
             <div class="contact_us p-1">
-              <img
-                class="w-[28px] h-[28px]"
-                src="./images/phone.png"
-                alt="phone"
-                title="phone"
-              />
+              <a href="tel:+" role="button">
+                <img
+                  class="w-[28px] h-[28px]"
+                  src="./images/phone.png"
+                  alt="phone"
+                  title="phone"
+                />
+              </a>
             </div>
             <div class="contact_us p-1">
-              <img
-                class="w-[20px] h-[28px]"
-                src="./images/tab.png"
-                alt="tab"
-                title="tab"
-              />
+              <a href="tel:+" role="button">
+                <img
+                  class="w-[20px] h-[28px]"
+                  src="./images/tab.png"
+                  alt="tab"
+                  title="tab"
+                />
+              </a>
             </div>
             <div class="contact_us p-1">
-              <img
-                class="w-[28px] h-[28px]"
-                src="./images/whatsapp.png"
-                alt="whatsapp"
-                title="whatsapp"
-              />
+              <a href="tel:" role="button">
+                <img
+                  class="w-[28px] h-[28px]"
+                  src="./images/whatsapp.png"
+                  alt="whatsapp"
+                  title="whatsapp"
+                />
+              </a>
             </div>
             <div class="contact_us p-1">
-              <img
-                class="w-[28px] h-[20px]"
-                src="./images/mail.png"
-                alt="mail"
-                title="mail"
-              />
+              <a href="mailto:" role="button">
+                <img
+                  class="w-[28px] h-[20px]"
+                  src="./images/mail.png"
+                  alt="mail"
+                  title="mail"
+                />
+              </a>
             </div>
           </div>
         </div>
@@ -332,6 +360,6 @@
     <script>
       AOS.init();
     </script>
-    <script type="module" src="./scripts/main.js"></script>
+    <script type="module" src="./scripts/main.js" defer></script>
   </body>
 </html>

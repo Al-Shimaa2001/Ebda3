@@ -101,7 +101,7 @@ header {
 }
 
 .electronic,
-.headphone {
+.headphone , .battery{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -110,9 +110,6 @@ header {
 .cardDevices {
   padding: 10px;
   border-radius: 12px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2em;
   box-shadow: 4px 7px 7px #3635351a, -4px -7px 7px #3635351a;
   position: relative;
   overflow: hidden;
@@ -138,11 +135,13 @@ header {
   aspect-ratio: 1/1;
 }
 .hide,
-.headphoneAddToCart {
+.headphoneAddToCart,
+.batteryAddToCart {
   display: none;
 }
 
 .cardDevices:hover .hide,
+.cardDevices:hover .batteryAddToCart,
 .cardDevices:hover .headphoneAddToCart {
   display: inline-block;
   text-align: center;
@@ -188,12 +187,6 @@ header {
 #shopping_now,
 .card {
   cursor: pointer;
-}
-.card {
-  transition: all 0.5s ease-in-out;
-}
-.departments .card:hover {
-  transform: scale(0.9);
 }
 .cart-popup {
   position: fixed;
@@ -287,30 +280,35 @@ footer {
   }
 
   .cardDevices:hover .hide,
+  .cardDevices:hover .batteryAddToCart,
   .cardDevices:hover .headphoneAddToCart {
     bottom: 34%;
   }
 }
 @media screen and (max-width: 840px) {
   .cardDevices:hover .hide,
+  .cardDevices:hover .batteryAddToCart,
   .cardDevices:hover .headphoneAddToCart {
     bottom: 20%;
   }
 }
 @media screen and (max-width: 640px) {
   .cardDevices:hover .hide,
+  .cardDevices:hover .batteryAddToCart,
   .cardDevices:hover .headphoneAddToCart {
     bottom: 22%;
   }
 }
 @media screen and (max-width: 440px) {
   .cardDevices:hover .hide,
+  .cardDevices:hover .batteryAddToCart,
   .cardDevices:hover .headphoneAddToCart {
     bottom: 35%;
   }
 }
 @media screen and (min-width: 640px) {
   .cardDevices:hover .hide,
+  .cardDevices:hover .batteryAddToCart,
   .cardDevices:hover .headphoneAddToCart {
     bottom: 35%;
   }

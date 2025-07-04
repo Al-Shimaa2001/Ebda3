@@ -6,10 +6,11 @@
   padding: 10px;
 }
 .cartsItems {
-  margin: 40px 80px;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 .eleTitle {
   text-align: end !important;

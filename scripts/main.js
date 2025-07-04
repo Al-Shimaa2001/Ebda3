@@ -1,6 +1,9 @@
 import { devices } from "../data/cart.js";
-import { headphones } from "./headphones.js";
+import { headphones } from "../data/headphones.js";
+import { battery } from "../data/battery.js";
+
 import { cart, saveToLocalStorage, calculateQuantity } from "./cart.js";
+
 let list_icon = document.querySelector(".list_icon");
 let mobileNav = document.querySelector(".mobile");
 
@@ -70,7 +73,10 @@ document.querySelectorAll(".card").forEach((card, i) => {
         block: "start",
       });
     } else {
-      console.log("end");
+      document.querySelector("#battery").scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
     }
   });
 });
@@ -128,10 +134,10 @@ headphones.forEach((ele) => {
         <p class='eleTitle'>${ele.title}</p>
         <div class="details">${ele.description}</div>
         <p class='salary'>${ele.price}</p>
-        <div class='headphoneAddToCart' data-headphone-id=${ele.id}>
+        <button  class='headphoneAddToCart' data-headphone-id=${ele.id}>
         <span class="ion--bag-outline"></span>
         <span>اضف للسله</span>
-        </div>
+        </button>
         </div>`;
 });
 document.querySelector(".headphoneCards").innerHTML = headphoneSection;
@@ -141,6 +147,46 @@ document.querySelectorAll(".headphoneAddToCart").forEach((addToCart) => {
     let matchingItem;
     headphones.forEach((items) => {
       if (headphone === items.id) {
+        matchingItem = items;
+      }
+    });
+    cart.push(matchingItem);
+    if (cart) {
+      calculateQuantity();
+    }
+    saveToLocalStorage();
+    popupAlert();
+  });
+});
+// battery
+let firstCardBattery = ` <div class="card">
+<img src="./images/battry-intry.png" alt="battery section"  class="rounded-xl">
+</div>`;
+let batterySection = "";
+
+battery.forEach((ele) => {
+  batterySection += `
+   <div class="card cardDevices">
+        <img src="${ele.img}" alt="electronics" class='eleImg' />
+        <p class='eleTitle'>${ele.title}</p>
+        <div class="details">${ele.description}</div>
+        <p class='salary'>${ele.price}</p>
+        <button  class='batteryAddToCart' data-battery-id=${ele.id}>
+        <span class="ion--bag-outline"></span>
+        <span>اضف للسله</span>
+        </button>
+        </div>`;
+});
+
+document.querySelector(
+  ".batteryCards"
+).innerHTML = `${firstCardBattery}  ${batterySection}`;
+document.querySelectorAll(".batteryAddToCart").forEach((addToCart) => {
+  addToCart.addEventListener("click", () => {
+    let batteryId = addToCart.dataset.batteryId;
+    let matchingItem;
+    battery.forEach((items) => {
+      if (batteryId === items.id) {
         matchingItem = items;
       }
     });
