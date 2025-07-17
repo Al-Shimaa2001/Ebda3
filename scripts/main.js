@@ -81,15 +81,6 @@ document.querySelectorAll(".card").forEach((card, i) => {
     }
   });
 });
-// search input
-// const search = document.querySelector(".search_input");
-// search.addEventListener("input", (e) => {
-//   let valueSearch = e.target.value;
-//   cart.forEach((ele) => {
-//     ele.title.includes(valueSearch);
-//   });
-// });
-// electronic devices cart
 
 let containerCard = "";
 devices.map((ele) => {
@@ -209,7 +200,7 @@ document.querySelectorAll(".batteryAddToCart").forEach((addToCart) => {
     popupAlert();
   });
 });
-//  add to favorite 
+//  add to favorite
 document.querySelectorAll(".cardDevices").forEach((card) => {
   card.addEventListener("dblclick", function () {
     card.classList.toggle("active");

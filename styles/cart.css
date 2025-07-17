@@ -4,29 +4,39 @@
 }
 .logo-cart img {
   padding: 10px;
-}
-.cartsItems {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 15px;
-}
-.eleTitle {
-  text-align: end !important;
-  margin: 0;
+  width: 200px;
+  height: 60px;
 }
 .cart-title {
   text-align: center;
   text-transform: capitalize;
 }
+.cartsItems {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.itemAddDetails {
+  text-align: end;
+}
+.eleTitle {
+  text-align: end !important;
+}
 .delete-from-cart {
+  padding: 10px;
   background-color: rgb(192, 24, 24) !important;
-  transform: translateY(10%) !important;
+  color: white;
+  text-align: center;
+  border-radius: 4px;
+  margin: 5px;
+  font-size: 16px;
+  
 }
 .delete-from-cart:hover {
   background-color: rgb(145, 8, 8) !important;
-  cursor: grab;
+  cursor: pointer;
 }
 .cart-popup {
   position: fixed;
@@ -51,14 +61,20 @@
   text-align: end;
   width: 100%;
 }
-.cardDevices {
-  display: flex !important;
-  flex-direction: column !important;
+.cartItems {
+  display: flex;
   gap: 1em;
-  width: 250px;
+  width: 450px;
   margin: 0 10px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row-reverse;
 }
-.cardDevices:hover .hide {
+.electronicsImage {
+  width: 140px !important;
+  height: 200px !important;
+}
+.cartItems:hover .hide {
   position: absolute;
   bottom: 50%;
   width: 70% !important;
@@ -66,6 +82,23 @@
   padding: 10px;
   right: 10px;
 }
+.incOrDec {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100px;
+  font-size: 20px;
+  color: #004956;
+  font-weight: bold;
+}
+.incOrDec button {
+  color: white;
+  background: #004956;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
 @keyframes slideIn {
   from {
     transform: translateX(100%);
