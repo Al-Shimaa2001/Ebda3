@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cart Items</title>
+    <title>سلة المشتريات</title>
     <link rel="stylesheet" href="./styles/cart.css" />
     <link rel="stylesheet" href="./styles/style.css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
@@ -146,10 +146,26 @@
         </div>
       </nav>
     </header>
-    <div class="cart-title">
-      <h2 class="">cart item : <span id="itemsNumber">0</span></h2>
-    </div>
-    <div class="cartsItems"></div>
+    <main class="containerCart">
+      <section class="">
+        <div class="cart-title">
+          <h2 class="">سله المشتريات</h2>
+        </div>
+        <div class="cartsItems"></div>
+      </section>
+      <section>
+        <div class="freeDeliver">
+          <img
+            src="./images/hugeicons_truck-delivery.svg"
+            alt="hugeicons_truck-delivery"
+          />
+          <article>
+            <h2>شحن مجاني</h2>
+            <span>مبروك عليك الشحن المجاني !!</span>
+          </article>
+        </div>
+      </section>
+    </main>
     <div id="cartPopup" class="cart-popup">
       <div class="popup-content">
         <span class="popup-icon">x</span>

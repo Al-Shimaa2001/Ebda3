@@ -7,22 +7,30 @@ document.addEventListener("DOMContentLoaded", () => {
   let cartHtml = "";
   cart.forEach((ele) => {
     cartHtml += `
-     <div class="cardDevices cartItems js-cart-item-${ele.id}">
-                <img src="${ele.img}" alt="electronics" class='eleImg electronicsImage' />
+     <section class="cartDevices flex js-cart-item-${ele.id} w-full">
+              <section class="cartItems">
+                <img src="${ele.img}" alt="electronics" class=' electronicsImage' />
                 <div class='itemAddDetails'>
-                <p class='eleTitle'>${ele.title}</p>
-                <article class="details">${ele.description}</article>
+                <p class='eleTitle'>${ele.description}</p>    
                 <p class='salary'>${ele.price}</p>
-                <div class="incOrDec">
+                <hr>
+                <div class="flex justify-between">
+                  <span class="text-[#B0C7CB] text-20px">المجموع</span>
+                <p class='salary'>${ele.price}</p>
+               <div class=' delete-from-cart' data-product-id=${ele.id}>
+                <span>احذف من السله</span>
+                 </div>
+                </div>
+                
+                </section>
+               <div class="incOrDec">
                 <button class='increase'>+</button>
                 <span class="quantityNumber">1</span>
                  <button class="dec">-</button>
                 </div>
-                <div class=' delete-from-cart' data-product-id=${ele.id}>
-                <span>احذف من السله</span>
-                 </div>
                 </div>
-               </div>`;
+                
+               </section>`;
   });
 
   let containerCartItems = document.querySelector(".cartsItems");

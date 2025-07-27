@@ -1,41 +1,39 @@
-.logo-cart {
-  display: flex;
-  justify-content: end;
-}
-.logo-cart img {
-  padding: 10px;
-  width: 200px;
-  height: 60px;
-}
-.cart-title {
-  text-align: center;
-  text-transform: capitalize;
-}
-.cartsItems {
+.containerCart {
+  margin: 20px 10em;
   display: grid;
+  grid-template-columns: 70% 350px;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 15px;
+}
+.cart-title {
+  color: #001a1e;
+  font-weight: bold;
+  font-size: 40px;
+}
+.cartDevices {
+  padding: 10px;
+  border-radius: 12px;
+  box-shadow: 4px 7px 7px #3635351a, -4px -7px 7px #3635351a;
+  transition: all 0.6s ease-in-out;
+  margin: 10px 0;
 }
 .itemAddDetails {
-  text-align: end;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
 }
 .eleTitle {
   text-align: end !important;
 }
 .delete-from-cart {
-  padding: 10px;
-  background-color: rgb(192, 24, 24) !important;
-  color: white;
-  text-align: center;
-  border-radius: 4px;
-  margin: 5px;
+  color: rgb(192, 24, 24);
   font-size: 16px;
+  transition: all 0.3s ease-in-out;
 }
 .delete-from-cart:hover {
-  background-color: rgb(145, 8, 8) !important;
   cursor: pointer;
+  text-shadow: #727272 6px 6px 10px;
+  color: red;
 }
 .cart-popup {
   position: fixed;
@@ -62,40 +60,29 @@
 }
 .cartItems {
   display: flex;
-  gap: 1em;
-  width: 450px;
+  width: 70%;
+  gap: 2em;
   margin: 0 10px;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row-reverse;
 }
 .electronicsImage {
   width: 140px !important;
   height: 200px !important;
 }
-.cartItems:hover .hide {
-  position: absolute;
-  bottom: 50%;
-  width: 70% !important;
-  margin: 0 10% !important;
-  padding: 10px;
-  right: 10px;
-}
 .incOrDec {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  flex-direction: column;
   width: 100px;
   font-size: 20px;
   color: #004956;
   font-weight: bold;
 }
 .incOrDec button {
-  color: white;
-  background: #004956;
+  color: #b0c7cb;
   border: none;
   border-radius: 5px;
-  padding: 5px 10px;
+  font-size: 23.33px;
 }
 
 @keyframes slideIn {
