@@ -14,8 +14,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 <article class="details">${ele.description}</article>
                 <p class='salary'>${ele.price}</p>
                 <div class="incOrDec">
-                <button class='inc'>+</button>
-                <span>1</span>
+                <button class='increase'>+</button>
+                <span class="quantityNumber">1</span>
                  <button class="dec">-</button>
                 </div>
                 <div class=' delete-from-cart' data-product-id=${ele.id}>
@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (containerCartItems) {
     containerCartItems.innerHTML = cartHtml;
   }
+  setupQuantityButtons();
 
   document.querySelectorAll(".delete-from-cart").forEach((deleteCartItem) => {
     deleteCartItem.addEventListener("click", () => {
@@ -53,6 +54,7 @@ function deleteItemFromCart(productId) {
   saveToLocalStorage();
   updateQuantity();
 }
+
 export function saveToLocalStorage() {
   localStorage.setItem("cartItems", JSON.stringify(cart));
 }
@@ -70,11 +72,45 @@ export function updateQuantity() {
   }
 }
 
-document.querySelectorAll(".inc").forEach((buttonIncrease) => {
-  buttonIncrease.addEventListener("click", () => {
-    console.log("hi");
+function setupQuantityButtons() {
+  // Handle increase buttons
+  document.querySelectorAll(".increase").forEach((button) => {
+    button.addEventListener("click", (e) => {
+      const quantityElement = e.target
+        .closest(".incOrDec")
+        .querySelector(".quantityNumber");
+      quantityElement.textContent = parseInt(quantityElement.textContent) + 1;
+      updateCartQuantity(
+        button.closest(".cartItems").dataset.id,
+        parseInt(quantityElement.textContent)
+      );
+    });
   });
-});
+
+  // Handle decrease buttons
+  document.querySelectorAll(".dec").forEach((button) => {
+    button.addEventListener("click", (e) => {
+      const quantityElement = e.target
+        .closest(".incOrDec")
+        .querySelector(".quantityNumber");
+      if (parseInt(quantityElement.textContent) > 1) {
+        quantityElement.textContent = parseInt(quantityElement.textContent) - 1;
+        updateCartQuantity(
+          button.closest(".cartItems").dataset.id,
+          parseInt(quantityElement.textContent)
+        );
+      }
+    });
+  });
+}
+function updateCartQuantity(productId, newQuantity) {
+  // Update the quantity in your cart array
+  const item = cart.find((item) => item.id === productId);
+  if (item) {
+    item.quantity = newQuantity;
+    saveToLocalStorage();
+  }
+}
 
 function popupAlert() {
   // Show popup
