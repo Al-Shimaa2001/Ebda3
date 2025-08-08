@@ -1,9 +1,6 @@
 .containerCart {
-  margin: 20px 10em;
-  display: grid;
-  grid-template-columns: 70% 350px;
-  justify-content: center;
-  align-items: center;
+  margin: 20px;
+
 }
 .cart-title {
   color: #001a1e;
@@ -27,7 +24,7 @@
 }
 .delete-from-cart {
   color: rgb(192, 24, 24);
-  font-size: 16px;
+  font-size: 1em;
   transition: all 0.3s ease-in-out;
 }
 .delete-from-cart:hover {
@@ -100,5 +97,14 @@
   }
   to {
     opacity: 0;
+  }
+}
+@media screen and (min-width: 1092px) {
+  .containerCart {
+    margin: 20px 10em;
+    display: grid;
+    grid-template-columns: 70% 350px;
+    justify-content: center;
+    align-items: center;
   }
 }

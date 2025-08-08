@@ -9,17 +9,17 @@ document.addEventListener("DOMContentLoaded", () => {
   let cartHtml = "";
   cart.forEach((ele) => {
     cartHtml += `
-     <section class="cartDevices flex js-cart-item-${ele.id} w-full"  data-element-id="${ele.id}">
+     <section class="cartDevices flex js-cart-item-${ele.id} "  data-element-id="${ele.id}">
               <section class="cartItems">
                 <img src="${ele.img}" alt="electronics" class='electronicsImage' />
                 <div class='itemAddDetails'>
                 <p class='eleTitle'>${ele.description}</p>    
                 <p class='salary'>${ele.price}ر.س</p>
                 <hr>
-                <div class="flex justify-between align-center">
+                <div class="flex justify-between items-center">
                   <span class="text-[#B0C7CB] text-20px">المجموع</span>
-                <p class='salary totalPrice' data-unit-price="${ele.price}">${ele.price}ر.س </p>
-               <div class=' delete-from-cart' data-product-id=${ele.id}>
+                <p class='salary totalPrice m-2' data-unit-price="${ele.price}">${ele.price}ر.س </p>
+               <div class='delete-from-cart m-2' data-product-id=${ele.id}>
                 <span>احذف من السله</span>
                  </div>
                 </div>   

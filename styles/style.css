@@ -174,8 +174,8 @@
   font-size: 20px;
 }
 .salary {
-  font-weight: 700;
-  font-size: 24px;
+  font-weight: 500;
+  font-size: 20px;
   color: #004956;
 }
 .your_world {
@@ -321,7 +321,11 @@ footer {
   .title {
     font-size: 32px;
   }
-
+.salary {
+  font-weight: 700;
+  font-size: 24px;
+  color: #004956;
+}
   .cardDevices:hover .hide,
   .cardDevices:hover .batteryAddToCart,
   .cardDevices:hover .headphoneAddToCart {
