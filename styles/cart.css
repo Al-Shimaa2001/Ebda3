@@ -57,7 +57,7 @@
 }
 .cartItems {
   display: flex;
-  width: 70%;
+  width: 100%;
   gap: 2em;
   margin: 0 10px;
 }
