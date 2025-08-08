@@ -121,9 +121,7 @@ function updateCartQuantity(productId, newQuantity) {
 // total price
 function calculateTotalPrice(quantityElement, cartItem) {
   let totalPriceElement = cartItem.querySelector(".totalPrice");
-  console.log(totalPriceElement);
   let elePrice = parseInt(totalPriceElement.dataset.unitPrice);
-  console.log(elePrice);
   let totalPrice = parseInt((elePrice * quantityElement).toFixed(2));
   totalPriceElement.innerHTML = totalPrice + " " + "ر.س";
 }
