@@ -91,7 +91,9 @@ devices.map((ele) => {
            />
         <p class='eleTitle'>${ele.title}</p>
         <div class="details">${ele.description}</div>
-        <p class='salary'>${ele.price}</p>
+        <p class='salary'>${ele.price}ر.س
+
+</p>
         <div class='hide' data-product-id=${ele.id}>
         <span class="ion--bag-outline"></span>
         <span>اضف للسله</span>
@@ -134,7 +136,7 @@ headphones.forEach((ele) => {
         <img src="${ele.img}" alt="electronics" class='eleImg' />
  <p class='eleTitle'>${ele.title}</p>
         <div class="details">${ele.description}</div>
-        <p class='salary'>${ele.price}</p>
+        <p class='salary'>${ele.price}ر.س</p>
         <button  class='headphoneAddToCart' data-headphone-id=${ele.id}>
         <span class="ion--bag-outline"></span>
         <span>اضف للسله</span>
@@ -172,7 +174,7 @@ battery.forEach((ele) => {
        />
         <p class='eleTitle'>${ele.title}</p>
         <div class="details">${ele.description}</div>
-        <p class='salary'>${ele.price}</p>
+        <p class='salary'>${ele.price}ر.س</p>
         <button  class='batteryAddToCart' data-battery-id=${ele.id}>
         <span class="ion--bag-outline"></span>
         <span>اضف للسله</span>
