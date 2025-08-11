@@ -1,17 +1,18 @@
 export let cart = JSON.parse(localStorage.getItem("cartItems")) || [];
 let quantity = cart.length;
+let quantityNumber = localStorage.getItem("quantityNumber");
+quantityNumber = quantity;
 let itemsNumber;
 // load
 document.addEventListener("DOMContentLoaded", () => {
-  updateCartQuantity();
   itemsNumber = document.querySelector("#itemsNumber");
   updateQuantity();
   let cartHtml = "";
   cart.forEach((ele) => {
     cartHtml += `
-     <section class="cartDevices flex js-cart-item-${ele.id} "  data-element-id="${ele.id}">
+     <section class="cartDevices cardDevice flex js-cart-item-${ele.id} "  data-element-id="${ele.id}">
               <section class="cartItems">
-                <img src="${ele.img}" alt="electronics" class='electronicsImage' />
+                <img src="${ele.img}" alt="electronics" class='electronicsImage' loading="lazy" />
                 <div class='itemAddDetails'>
                 <p class='eleTitle'>${ele.description}</p>    
                 <p class='salary'>${ele.price}ر.س</p>
@@ -65,8 +66,11 @@ function deleteItemFromCart(productId) {
 export function saveToLocalStorage() {
   localStorage.setItem("cartItems", JSON.stringify(cart));
 }
+function saveQuantityNumber() {
+  localStorage.setItem("quantityNumber", quantity);
+}
 // calculate quantity
-export function calculateQuantity() {
+export function calculateQuantity(quantity) {
   quantity = cart.length;
   updateQuantity();
 }
@@ -78,7 +82,9 @@ export function updateQuantity() {
   if (itemsNumber) {
     itemsNumber.innerHTML = quantity;
   }
+  saveQuantityNumber();
 }
+
 // increase and decrease button
 function setupQuantityButtons() {
   // Handle increase buttons
@@ -87,11 +93,9 @@ function setupQuantityButtons() {
       const cartItem = e.target.closest(".cartDevices");
       const quantityElement = cartItem.querySelector(".quantityNumber");
       quantityElement.textContent = parseInt(quantityElement.textContent) + 1;
+      quantity += 1;
+      updateQuantity();
       calculateTotalPrice(quantityElement.textContent, cartItem);
-      updateCartQuantity(
-        cartItem.dataset.elementId,
-        parseInt(quantityElement.textContent)
-      );
     });
   });
   // Handle decrease buttons
@@ -101,23 +105,14 @@ function setupQuantityButtons() {
       const quantityElement = cartItem.querySelector(".quantityNumber");
       if (parseInt(quantityElement.textContent) > 1) {
         quantityElement.textContent = parseInt(quantityElement.textContent) - 1;
+        quantity -= 1;
+        updateQuantity();
         calculateTotalPrice(quantityElement.textContent, cartItem);
-        updateCartQuantity(
-          cartItem.dataset.elementId,
-          parseInt(quantityElement.textContent)
-        );
       }
     });
   });
 }
-// update cart  quantity in cart page
-function updateCartQuantity(productId, newQuantity) {
-  const item = cart.find((item) => item.id === productId);
-  if (item) {
-    item.quantity = newQuantity;
-    saveToLocalStorage();
-  }
-}
+
 // total price
 function calculateTotalPrice(quantityElement, cartItem) {
   let totalPriceElement = cartItem.querySelector(".totalPrice");
