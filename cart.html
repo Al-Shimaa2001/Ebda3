@@ -14,7 +14,6 @@
       <nav class="flex items-center justify-between lg:justify-evenly w-full">
         <div>
           <a href="index.html">
-
             <img
               src="./images/image 1.png"
               alt="logo of the website"
@@ -149,15 +148,16 @@
         </div>
       </nav>
     </header>
+    <div class="cart-title mx-10">
+      <h2 class="">سله المشتريات</h2>
+    </div>
     <main class="containerCart">
+      <!-- get items from js file -->
       <section class="">
-        <div class="cart-title">
-          <h2 class="">سله المشتريات</h2>
-        </div>
         <div class="cartsItems"></div>
       </section>
-      <section>
-        <div class="freeDeliver">
+      <section class="">
+        <div class="freeDeliver cardDevice flex gap-2">
           <img
             src="./images/hugeicons_truck-delivery.svg"
             alt="hugeicons_truck-delivery"
@@ -167,6 +167,52 @@
             <span>مبروك عليك الشحن المجاني !!</span>
           </article>
         </div>
+        <div class="cardDevice">
+          <div class="flex gap-2 m-2 p-2 items-start">
+            <img
+              src="./images/sailCode.png"
+              alt="hugeicons_truck-delivery"
+              loading="lazy"
+            />
+            <h5>هل لديك كود خصم</h5>
+          </div>
+
+          <div class="m-2 p-2 flex justify-between items-center">
+            <input
+              type="text"
+              name="code"
+              id="code"
+              placeholder="ادخل كود الخصم"
+              class="border rounded p-2"
+            />
+            <button class="bg-blue-900 text-white p-2 text-center rounded-xl">
+              اضافه
+            </button>
+          </div>
+          <hr class="text-[#B0C7CB] w-90 lg:w-50 mx-auto my-4" />
+          <div>
+            <h3>ملخص الطلب:</h3>
+            <div class="flex justify-between items-center px-3">
+              <p>مجموع المنتجات(بدون ضريبه)</p>
+              <span>0</span>
+            </div>
+            <div class="flex justify-between items-center px-3">
+              <p>توصيل</p>
+              <span>مجاني</span>
+            </div>
+          </div>
+          <hr class="text-[#B0C7CB] w-90 lg:w-50 mx-auto my-4" />
+
+          <div class="flex justify-between items-center px-3">
+            <h3>الاجمالي:</h3>
+            <span>0</span>
+          </div>
+          <div>
+            <button>استمرار</button>
+            <a href="/index.html">اضافه عناصر</a>
+          </div>
+        </div>
+        <span>دفع آمن, استرجاع سهل, منتجات اصليه 100%</span>
       </section>
     </main>
     <div id="cartPopup" class="cart-popup">
@@ -175,6 +221,90 @@
         <p>تم الحذف من السلة بنجاح</p>
       </div>
     </div>
+
+    <!-- footer -->
+    <section>
+      <div class="relative">
+        <button class="return_top px-10 py-2 hover:bg-red-900">
+          الرجوع للأعلى
+        </button>
+      </div>
+      <footer class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 p-10">
+        <div class="flex flex-col items-start justify-start md:ps-20">
+          <img
+            src="./images/image 1.png"
+            alt="logo of the website"
+            loading="eager"
+            densities="1x 2x"
+            class="w-[138px] lg:h-[40px] my-[30px]"
+          />
+          <article class="text-[#003741] text-[18px]">
+            تيكزون، متجر إلكتروني في المملكة العربية السعودية في جدة ويقدم
+            العديد من المنتجات الإلكترونية من قطع وإكسسوارات وألعاب الأطفال,
+            وغيرها من تسهيلات الحياة، خدماتنا لجميع دول الخليج العربي
+          </article>
+        </div>
+        <div>
+          <h2 class="text-[#001A1E] font-bold text-[24px]">روابط مهمه</h2>
+          <div
+            class="flex justify-evenly items-center my-4 text-[#003741] text-[18px]"
+          >
+            <p>سياسه الاستخدام والخصوصيه</p>
+            <p>سياسه الاستبدال والاسترجاع</p>
+          </div>
+        </div>
+        <div>
+          <h2 class="text-[24px] text-[#001A1E] font-bold">تواصل معنا</h2>
+          <div class="flex gap-4 my-4">
+            <div class="contact_us p-1">
+              <a href="tel:+" role="button">
+                <img
+                  class="w-[28px] h-[28px]"
+                  src="./images/phone.png"
+                  alt="phone"
+                  title="phone"
+                />
+              </a>
+            </div>
+            <div class="contact_us p-1">
+              <a href="tel:+" role="button">
+                <img
+                  class="w-[20px] h-[28px]"
+                  src="./images/tab.png"
+                  alt="tab"
+                  title="tab"
+                />
+              </a>
+            </div>
+            <div class="contact_us p-1">
+              <a href="tel:" role="button">
+                <img
+                  class="w-[28px] h-[28px]"
+                  src="./images/whatsapp.png"
+                  alt="whatsapp"
+                  title="whatsapp"
+                />
+              </a>
+            </div>
+            <div class="contact_us p-1">
+              <a href="mailto:" role="button">
+                <img
+                  class="w-[28px] h-[20px]"
+                  src="./images/mail.png"
+                  alt="mail"
+                  title="mail"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <div
+        class="font-bold text-[20px] text-[#001A1E] text-right bg-[#D9E4E6] py-6 ps-20"
+      >
+        <p class="date"></p>
+      </div>
+    </section>
     <script type="module" src="./scripts/cart.js" defer></script>
   </body>
 </html>
