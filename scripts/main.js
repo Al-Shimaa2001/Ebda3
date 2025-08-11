@@ -85,10 +85,10 @@ document.querySelectorAll(".card").forEach((card, i) => {
 let containerCard = "";
 devices.map((ele) => {
   let showElement = `
-        <div class="card cardDevices" 
+        <div class="card cardDevices cardDevice" 
         title="اضغط مرتين للاضافة الى المفضله">
         <img src="${ele.img}" alt="electronics" class='eleImg'
-           />
+           loading="lazy"/>
         <p class='eleTitle'>${ele.title}</p>
         <div class="details">${ele.description}</div>
         <p class='salary'>${ele.price}ر.س
@@ -132,8 +132,8 @@ function popupAlert() {
 // headphones
 let headphoneSection = "";
 headphones.forEach((ele) => {
-  headphoneSection += ` <div class="card cardDevices" title="اضغط مرتين للاضافة الى المفضله">
-        <img src="${ele.img}" alt="electronics" class='eleImg' />
+  headphoneSection += ` <div class="card cardDevices cardDevice" title="اضغط مرتين للاضافة الى المفضله">
+        <img src="${ele.img}" alt="electronics" class='eleImg' loading="lazy" />
  <p class='eleTitle'>${ele.title}</p>
         <div class="details">${ele.description}</div>
         <p class='salary'>${ele.price}ر.س</p>
@@ -169,8 +169,8 @@ let batterySection = "";
 
 battery.forEach((ele) => {
   batterySection += `
-   <div class="card cardDevices" title="اضغط مرتين للاضافة الى المفضله" >
-        <img src="${ele.img}" alt="electronics" class='eleImg' 
+   <div class="card cardDevices cardDevice" title="اضغط مرتين للاضافة الى المفضله" >
+        <img src="${ele.img}" alt="electronics" class='eleImg' loading="lazy" 
        />
         <p class='eleTitle'>${ele.title}</p>
         <div class="details">${ele.description}</div>
@@ -215,12 +215,12 @@ clients.forEach((client) => {
   <p class='text-[#003741] text-[20px]'>${client.title}</p>
   <div class="client-details">
   <div class="clients-profile  ">
-  <img src="${client.profile}" alt="clients profile"/>
+  <img src="${client.profile}" alt="clients profile" loading="lazy"/>
   </div>
          <div>
           <p class="text-[#001A1E] font-bold text-[24px]">${client.userName}</p>
           <span class='rating'>
-          <img src="${client.rating}" alt="rating"/>
+          <img src="${client.rating}" alt="rating" loading="lazy"/>
           </span>
          </div>
         </div>
