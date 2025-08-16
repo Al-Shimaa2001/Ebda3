@@ -189,7 +189,6 @@
             />
             <button
               class="codeAddBtn bg-[#004956] text-white text-6 p-2 text-center rounded-xl"
-            
             >
               اضافه
             </button>
@@ -199,7 +198,7 @@
             <h3 class="text-[#001A1E] text-6 font-bold">ملخص الطلب:</h3>
             <div class="flex justify-between items-center px-3 my-4">
               <p>مجموع المنتجات(بدون ضريبه)</p>
-              <span class="text-[#001A1E]">0</span>
+              <span class="text-[#001A1E] summary">0</span>
             </div>
             <div class="flex justify-between items-center px-3">
               <p>توصيل</p>
@@ -210,7 +209,7 @@
 
           <div class="flex justify-between items-center px-3">
             <h3 class="text-[#001A1E] text-6 font-bold my-4">الاجمالي:</h3>
-            <span class="text-[#001A1E]">0</span>
+            <span class="text-[#001A1E] allTotal">0</span>
           </div>
           <div class="mx-5 text-center">
             <button
@@ -230,7 +229,7 @@
         >
       </section>
     </main>
-    <div id="cartPopup" class="cart-popup">
+    <div id="cartPopup" class="cart-popup code-popup">
       <div class="popup-content">
         <span class="popup-icon">x</span>
         <p>تم الحذف من السلة بنجاح</p>
@@ -320,6 +319,6 @@
         <p class="date"></p>
       </div>
     </section>
-    <script type="module" src="./scripts/cart.js" defer></script>
+    <script type="module" src="./scripts/cartfunctionality.js" defer></script>
   </body>
 </html>

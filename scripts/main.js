@@ -3,7 +3,7 @@ import { headphones } from "../data/headphones.js";
 import { battery } from "../data/battery.js";
 import { clients } from "../data/clientsOpinion.js";
 
-import { cart, saveToLocalStorage, calculateQuantity } from "./cart.js";
+import { cart, saveToLocalStorage, calculateQuantity } from "./cartfunctionality.js";
 
 let list_icon = document.querySelector(".list_icon");
 let mobileNav = document.querySelector(".mobile");

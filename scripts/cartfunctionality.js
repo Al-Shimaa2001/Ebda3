@@ -36,7 +36,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let containerCartItems = document.querySelector(".cartsItems");
   if (containerCartItems) {
     containerCartItems.innerHTML =
-      cartHtml || "<p class='salary'>السلة فارغة</p>";
+      cartHtml ||
+      "<p class='text-center font-bold text-4xl text-gray-800 m-3'>السلة فارغة</p>";
   }
   setupQuantityButtons();
 
@@ -47,9 +48,11 @@ document.addEventListener("DOMContentLoaded", () => {
       let container = document.querySelector(`.js-cart-item-${itemId}`);
       container.remove();
       popupAlert();
+      summaryTotalPrice();
     });
   });
   addCodeInput();
+  summaryTotalPrice();
 });
 // delete
 function deleteItemFromCart(productId) {
@@ -62,6 +65,7 @@ function deleteItemFromCart(productId) {
   cart = newCart;
   saveToLocalStorage();
   updateQuantity();
+  summaryTotalPrice();
 }
 // save to storage
 export function saveToLocalStorage() {
@@ -74,6 +78,7 @@ function saveQuantityNumber() {
 export function calculateQuantity(quantity) {
   quantity = cart.length;
   updateQuantity();
+  summaryTotalPrice();
 }
 // update quantity
 export function updateQuantity() {
@@ -98,6 +103,7 @@ function setupQuantityButtons() {
       quantity += 1;
       updateQuantity();
       calculateTotalPrice(quantityElement.textContent, cartItem);
+      summaryTotalPrice();
     });
   });
   // Handle decrease buttons
@@ -110,6 +116,7 @@ function setupQuantityButtons() {
         quantity -= 1;
         updateQuantity();
         calculateTotalPrice(quantityElement.textContent, cartItem);
+        summaryTotalPrice();
       }
     });
   });
@@ -137,14 +144,50 @@ const inputValue = document.querySelector(".codeInput");
 const codeAddBtn = document.querySelector(".codeAddBtn");
 function addCodeInput() {
   codeAddBtn.addEventListener("click", () => {
-    if (inputValue.value) {
-      const popup = document.querySelector(".cart-popup");
+    let innerValue = inputValue.value;
+    if (innerValue) {
+      const popup = document.querySelector(".code-popup");
       popup.innerHTML = "تم اضافة الكود ";
       popup.style.display = "flex";
       setTimeout(() => {
         popup.style.display = "none";
       }, 3000);
     }
+    saveCode(innerValue);
   });
 }
+function saveCode(innerValue) {
+  localStorage.setItem("sailsCode", innerValue);
+}
+let codeSails = localStorage.getItem("sailsCode");
 
+let summary = document.querySelector(".summary");
+let allTotal = document.querySelector(".allTotal");
+function summaryTotalPrice() {
+  let total = 0;
+  cart.forEach((ele) => {
+    total = ele.price * quantity;
+  });
+  if (summary) {
+    summary.innerHTML = total.toFixed(2) + "ر.س";
+  }
+  if (allTotal) {
+    allTotal.innerHTML = total.toFixed(2) + "ر.س";
+  }
+}
+
+// footer button scroll to top
+const scrollToTop = document.querySelector(".return_top");
+scrollToTop.addEventListener("click", function (e) {
+  e.preventDefault();
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+});
+
+let date = new Date();
+document.querySelector(
+  ".date"
+).innerHTML = ` الحقوق محفوظه | TEQZON ${date.getFullYear()}
+     `;

@@ -1,6 +1,5 @@
 .containerCart {
   margin: 20px;
-
 }
 .cart-title {
   color: #001a1e;
@@ -101,13 +100,12 @@
     grid-template-columns: 50% 350px;
     gap: 10em;
     justify-content: center;
-
   }
   .cartItems {
- flex-wrap: nowrap;
-}
-.incOrDec {
-  justify-content: space-evenly;
-flex-direction: column;
-}
+    flex-wrap: nowrap;
+  }
+  .incOrDec {
+    justify-content: space-evenly;
+    flex-direction: column;
+  }
 }
