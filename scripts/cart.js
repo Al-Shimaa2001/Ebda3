@@ -49,6 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
       popupAlert();
     });
   });
+  addCodeInput();
 });
 // delete
 function deleteItemFromCart(productId) {
@@ -82,6 +83,7 @@ export function updateQuantity() {
   if (itemsNumber) {
     itemsNumber.innerHTML = quantity;
   }
+  saveToLocalStorage();
   saveQuantityNumber();
 }
 
@@ -130,3 +132,19 @@ function popupAlert() {
     }, 3000);
   }
 }
+//  code and delivery section
+const inputValue = document.querySelector(".codeInput");
+const codeAddBtn = document.querySelector(".codeAddBtn");
+function addCodeInput() {
+  codeAddBtn.addEventListener("click", () => {
+    if (inputValue.value) {
+      const popup = document.querySelector(".cart-popup");
+      popup.innerHTML = "تم اضافة الكود ";
+      popup.style.display = "flex";
+      setTimeout(() => {
+        popup.style.display = "none";
+      }, 3000);
+    }
+  });
+}
+

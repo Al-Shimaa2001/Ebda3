@@ -180,13 +180,16 @@
           <div class="m-2 p-2 flex justify-between items-center">
             <input
               type="text"
+              pattern="[0-9]{5,10}"
               name="code"
               id="code"
               placeholder="ادخل كود الخصم"
-              class="border placeholder:text-[#001A1E] border-[#B0C7CB] rounded p-2"
+              value=""
+              class="codeInput border placeholder:text-[#001A1E] border-[#B0C7CB] rounded p-2"
             />
             <button
-              class="bg-[#004956] text-white text-6 p-2 text-center rounded-xl"
+              class="codeAddBtn bg-[#004956] text-white text-6 p-2 text-center rounded-xl"
+            
             >
               اضافه
             </button>
@@ -194,7 +197,7 @@
           <hr class="text-[#B0C7CB] w-90 lg:w-50 mx-auto my-4" />
           <div>
             <h3 class="text-[#001A1E] text-6 font-bold">ملخص الطلب:</h3>
-            <div class="flex justify-between items-center px-3">
+            <div class="flex justify-between items-center px-3 my-4">
               <p>مجموع المنتجات(بدون ضريبه)</p>
               <span class="text-[#001A1E]">0</span>
             </div>
@@ -206,7 +209,7 @@
           <hr class="text-[#B0C7CB] w-90 lg:w-50 mx-auto my-4" />
 
           <div class="flex justify-between items-center px-3">
-            <h3 class="text-[#001A1E] text-6 font-bold">الاجمالي:</h3>
+            <h3 class="text-[#001A1E] text-6 font-bold my-4">الاجمالي:</h3>
             <span class="text-[#001A1E]">0</span>
           </div>
           <div class="mx-5 text-center">
