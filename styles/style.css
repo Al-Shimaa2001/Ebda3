@@ -26,7 +26,7 @@
   mask-size: 100% 100%;
 }
 /* right & left arrow  */
-.icon-park-outline--right::after {
+/* .icon-park-outline--right::after {
   display: inline-block;
   width: 40px;
   height: 40px;
@@ -34,8 +34,8 @@
   content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='4' d='m19 12l12 12l-12 12'/%3E%3C/svg%3E");
   background-color: #b0c7cb;
   border-radius: 50%;
-}
-.icon-park-outline--left::after {
+} */
+/* .icon-park-outline--left::after {
   display: inline-block;
   width: 40px;
   height: 40px;
@@ -43,7 +43,7 @@
   content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='4' d='M31 36L19 24l12-12'/%3E%3C/svg%3E");
   background-color: #b0c7cb;
   border-radius: 50%;
-}
+} */
 /* cart logo */
 .ion--bag-outline::after {
   display: inline-block;
@@ -98,14 +98,48 @@
   text-align: center;
   margin: 32px 0;
 }
-
-.electronic,
-.headphone,
-.battery {
+#headphone {
+  position: relative;
+  overflow: hidden;
+}
+.headphoneCards {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  overflow-x: scroll;
+  gap: 2em;
+  scroll-behavior: smooth;
+}
+.headphoneCards .card {
+  flex: 0 0 18em;
+  height: fit-content;
+}
+.headphoneCards::-webkit-scrollbar {
+  display: none;
+}
+.headphoneCards::scroll-button(right),
+.headphoneCards::scroll-button(left) {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='4' d='m19 12l12 12l-12 12'/%3E%3C/svg%3E");
+  border: none;
+  background-color: #b0c7cb;
+  border-radius: 50%;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  vertical-align: -0.125em;
+  cursor: pointer;
+  position: absolute;
+  bottom: 90%;
+  right: 85%;
+  z-index: 10;
+}
+.headphoneCards::scroll-button(left) {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='4' d='M31 36L19 24l12-12'/%3E%3C/svg%3E");
+  position: absolute;
+  bottom: 90%;
+  right: 90%;
+}
+div::scroll-button(right):disabled,
+div::scroll-button(left):disabled {
+  opacity: 0.5;
 }
 .cardDevice {
   padding: 10px;
@@ -321,11 +355,11 @@ footer {
   .title {
     font-size: 32px;
   }
-.salary {
-  font-weight: 700;
-  font-size: 24px;
-  color: #004956;
-}
+  .salary {
+    font-weight: 700;
+    font-size: 24px;
+    color: #004956;
+  }
   .cardDevices:hover .hide,
   .cardDevices:hover .batteryAddToCart,
   .cardDevices:hover .headphoneAddToCart {
