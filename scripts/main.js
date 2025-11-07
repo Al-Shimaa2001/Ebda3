@@ -136,16 +136,19 @@ function popupAlert() {
 // headphones
 let headphoneSection = "";
 headphones.forEach((ele) => {
-  headphoneSection += ` <div class="card cardDevices cardDevice" title="اضغط مرتين للاضافة الى المفضله">
-        <img src="${ele.img}" alt="electronics" class='eleImg' loading="lazy" />
+  headphoneSection += ` 
+  <div class="card cardDevices cardDevice"
+             data-aos="zoom-in"
+             title="اضغط مرتين للاضافة الى المفضله">
+ <img src="${ele.img}" alt="electronics" class='eleImg' loading="lazy" />
  <p class='eleTitle'>${ele.title}</p>
-        <div class="details">${ele.description}</div>
-        <p class='salary'>${ele.price}ر.س</p>
-        <button  class='headphoneAddToCart' data-headphone-id=${ele.id}>
-        <span class="ion--bag-outline"></span>
-        <span>اضف للسله</span>
-        </button>
-        </div>`;
+ <div class="details">${ele.description}</div>
+ <p class='salary'>${ele.price}ر.س</p>
+ <button  class='headphoneAddToCart' data-headphone-id=${ele.id}>
+ <span class="ion--bag-outline"></span>
+ <span>اضف للسله</span>
+ </button>
+ </div>`;
 });
 document.querySelector(".headphoneCards").innerHTML = headphoneSection;
 document.querySelectorAll(".headphoneAddToCart").forEach((addToCart) => {
