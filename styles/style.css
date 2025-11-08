@@ -368,20 +368,6 @@ footer {
   .cardDevices:hover .headphoneAddToCart {
     bottom: 34%;
   }
-  #headphone,
-  #battery,
-  #electronics {
-    position: relative;
-    overflow: hidden;
-    margin: 0;
-    padding: 0;
-  }
-  .electronics .card,
-  .batteryCards .card,
-  .headphoneCards .card {
-    flex: 0 0 2em;
-    height: fit-content;
-  }
 }
 @media screen and (max-width: 840px) {
   .cardDevices:hover .hide,
@@ -392,8 +378,6 @@ footer {
   #headphone,
   #battery,
   #electronics {
-    position: relative;
-    overflow: hidden;
     margin: 4em 0;
     padding: 2em 0;
   }
@@ -435,11 +419,5 @@ footer {
   .cardDevices:hover .batteryAddToCart,
   .cardDevices:hover .headphoneAddToCart {
     bottom: 35%;
-  }
-  .electronics .card,
-  .batteryCards .card,
-  .headphoneCards .card {
-    flex: 0 0 2em;
-    height: fit-content;
   }
 }
