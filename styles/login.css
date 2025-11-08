@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+main {
+  background-image: url("../images/loginBackground.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2em;
+  color: #004956;
+}
+header {
+  font-weight: 500;
+  font-size: 20px;
+  text-align: center;
+}
+.signin {
+  display: inline-block;
+  color: #9fb2b6;
+  padding: 0.2em 0;
+  text-decoration: none;
+  font-size: 15px;
+  transition: all 0.5s ease-in-out;
+}
+.signin:hover {
+  color: #647275;
+  text-decoration: underline;
+  transform: scale(1.1);
+}
+form {
+  display: grid;
+  gap: 0.9em;
+  width: 25%;
+}
+.formEle {
+  display: grid;
+  gap: 0.5em;
+}
+
+input {
+  background: transparent;
+  border: 1px solid rgb(74, 103, 110);
+  padding: 1em;
+  border-radius: 5px;
+}
+input:hover {
+  border: 1px solid rgb(181, 221, 231);
+  box-shadow: 5px 5px 5px rgb(183, 192, 194), -5px -5px 5px rgb(183, 192, 194);
+}
+input:focus {
+  outline: none;
+}
+button {
+  background-color: #004956;
+  border: none;
+  border-radius: 5px;
+  padding: 1em;
+  font-weight: 600;
+  color: white;
+  transition: all 0.5s ease-in-out;
+}
+button:hover {
+  cursor: pointer;
+  background-color: #017286;
+  letter-spacing: 2px;
+}
