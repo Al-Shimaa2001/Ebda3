@@ -12,7 +12,7 @@
         <h1>Login</h1>
         <a href="./signin" class="signin">sign in to continue</a>
       </header>
-      <form action="post">
+      <form>
         <div class="formEle">
           <label for="email"> Email: </label>
           <input
@@ -21,6 +21,10 @@
             id="email"
             placeholder="hello@reallygreatsite.com"
           />
+          <div class="errorMail">
+            <p>please enter email</p>
+            <p>ex:"hello@reallygreatsite.com"</p>
+          </div>
         </div>
         <div class="formEle">
           <label for="password"> Password : </label>
@@ -30,9 +34,12 @@
             id="password"
             placeholder="******"
           />
+          <div class="passError">
+            <p>please enter the password</p>
+          </div>
           <a href="#" class="signin"> Forget Password ?</a>
         </div>
-        <button type="submit">Login</button>
+        <button class="loginBtn" onclick="login()">Login</button>
       </form>
     </main>
 

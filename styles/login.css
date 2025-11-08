@@ -73,3 +73,9 @@ button:hover {
   background-color: #017286;
   letter-spacing: 2px;
 }
+.errorMail,
+.passError {
+  display: none;
+  font-size: 15px;
+  color: rgb(136, 42, 42);
+}
