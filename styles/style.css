@@ -368,12 +368,52 @@ footer {
   .cardDevices:hover .headphoneAddToCart {
     bottom: 34%;
   }
+  #headphone,
+  #battery,
+  #electronics {
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+  }
+  .electronics .card,
+  .batteryCards .card,
+  .headphoneCards .card {
+    flex: 0 0 2em;
+    height: fit-content;
+  }
 }
 @media screen and (max-width: 840px) {
   .cardDevices:hover .hide,
   .cardDevices:hover .batteryAddToCart,
   .cardDevices:hover .headphoneAddToCart {
     bottom: 20%;
+  }
+  #headphone,
+  #battery,
+  #electronics {
+    position: relative;
+    overflow: hidden;
+    margin: 4em 0;
+    padding: 2em 0;
+  }
+  .electronics::scroll-button(right),
+  .electronics::scroll-button(left),
+  .batteryCards::scroll-button(right),
+  .batteryCards::scroll-button(left),
+  .headphoneCards::scroll-button(right),
+  .headphoneCards::scroll-button(left) {
+    bottom: 85%;
+  }
+  .electronics::scroll-button(left),
+  .batteryCards::scroll-button(left),
+  .headphoneCards::scroll-button(left) {
+    right: 85%;
+  }
+  .electronics::scroll-button(right),
+  .batteryCards::scroll-button(right),
+  .headphoneCards::scroll-button(right) {
+    right: 75%;
   }
 }
 @media screen and (max-width: 640px) {
@@ -395,5 +435,11 @@ footer {
   .cardDevices:hover .batteryAddToCart,
   .cardDevices:hover .headphoneAddToCart {
     bottom: 35%;
+  }
+  .electronics .card,
+  .batteryCards .card,
+  .headphoneCards .card {
+    flex: 0 0 2em;
+    height: fit-content;
   }
 }
