@@ -59,7 +59,9 @@ input:hover {
 input:focus {
   outline: none;
 }
-button {
+.loginBtn {
+  text-align: center;
+  text-decoration: none;
   background-color: #004956;
   border: none;
   border-radius: 5px;
@@ -68,7 +70,7 @@ button {
   color: white;
   transition: all 0.5s ease-in-out;
 }
-button:hover {
+.loginBtn:hover {
   cursor: pointer;
   background-color: #017286;
   letter-spacing: 2px;

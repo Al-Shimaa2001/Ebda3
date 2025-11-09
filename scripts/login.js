@@ -3,8 +3,7 @@ const email = document.querySelector("#email");
 const password = document.querySelector("#password");
 const errorMail = document.querySelector(".errorMail");
 const passError = document.querySelector(".passError");
-
-function login() {
+loginBtn.addEventListener("click", () => {
   if (!email.value && !password.value) {
     errorMail.style.display = "inline-block";
     passError.style.display = "inline-block";
@@ -24,5 +23,6 @@ function login() {
     }, 5000);
   } else {
     console.log("login success");
+    loginBtn.href = "../index.html";
   }
-}
+});
