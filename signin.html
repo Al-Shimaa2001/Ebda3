@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/signin.css" />
+    <title>sign in</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Create a new Account</h1>
+        <span class="signin"
+          >Already Registered?
+          <a href="./loginPage.html" class="signin">Login</a></span
+        >
+      </header>
+      <form action="" class="loginForm">
+        <label for="fullName" class="formEle">
+          <p>Full Name :</p>
+          <input
+            type="text"
+            id="fullName"
+            placeholder="fullName"
+            value=""
+            required
+          />
+        </label>
+        <label for="email" class="formEle">
+          <p>Email :</p>
+          <input
+            type="email"
+            id="email"
+            placeholder="email@example.com"
+            value=""
+            required
+          />
+        </label>
+        <label for="password" class="formEle">
+          <p>Password :</p>
+          <input
+            type="password"
+            id="password"
+            placeholder="password"
+            required
+            minlength=""
+          />
+        </label>
+        <span class="errorLength"
+          >password length should be more than 8 character !
+        </span>
+        <label for="confirmPassword" class="formEle">
+          <p>Confirm Password :</p>
+          <input
+            type="password"
+            id="confirmPassword"
+            placeholder="confirmPassword"
+            required
+          />
+        </label>
+
+        <a role="button" href="#" class="signBtn"> sign up</a>
+      </form>
+      <div class="successSign">you are sign in successfully</div>
+      <div class="successSign error">you are sign in successfully !</div>
+    </main>
+    <script src="./scripts/signin.js"></script>
+  </body>
+</html>

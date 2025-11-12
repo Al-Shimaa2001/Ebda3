@@ -17,6 +17,7 @@ main {
   flex-direction: column;
   gap: 2em;
   color: #004956;
+  transition: all 3s ease-in-out;
 }
 header {
   font-weight: 500;
@@ -31,7 +32,7 @@ header {
   font-size: 15px;
   transition: all 0.5s ease-in-out;
 }
-.signin:hover {
+.signin a:hover {
   color: #647275;
   text-decoration: underline;
   transform: scale(1.1);
@@ -46,6 +47,7 @@ input {
   border: 1px solid rgb(74, 103, 110);
   padding: 1em;
   border-radius: 5px;
+  transition: all 0.5s ease-in-out;
 }
 input:hover {
   border: 1px solid rgb(181, 221, 231);
@@ -54,7 +56,7 @@ input:hover {
 input:focus {
   outline: none;
 }
-.loginBtn {
+.signBtn {
   text-align: center;
   text-decoration: none;
   background-color: #004956;
@@ -65,7 +67,7 @@ input:focus {
   color: white;
   transition: all 0.5s ease-in-out;
 }
-.loginBtn:hover {
+.signBtn:hover {
   cursor: pointer;
   background-color: #017286;
   letter-spacing: 2px;
@@ -80,6 +82,31 @@ input:focus {
   display: grid;
   gap: 0.9em;
   width: 40%;
+}
+.successSign {
+  text-transform: capitalize;
+  background-color: #21db21;
+  color: white;
+  padding: 1em;
+  border-radius: 1em;
+  transform: translate(32em, 5em);
+  z-index: 100;
+  display: none;
+  width: 20%;
+  font-size: 20;
+  font-weight: 700;
+}
+.errorLength {
+  display: none;
+  font-size: 20;
+  font-weight: 700;
+  color: white;
+  padding: 1em;
+  border-radius: 1em;
+}
+.error,
+.errorLength {
+  background-color: rgb(238, 8, 8) !important;
 }
 @media screen and (max-width: 720px) {
   .loginForm {
