@@ -18,6 +18,7 @@ main {
   gap: 2em;
   color: #004956;
   transition: all 3s ease-in-out;
+  position: relative;
 }
 header {
   font-weight: 500;
@@ -84,12 +85,15 @@ input:focus {
   width: 40%;
 }
 .successSign {
+  position: absolute;
   text-transform: capitalize;
   background-color: #21db21;
   color: white;
   padding: 1em;
   border-radius: 1em;
-  transform: translate(32em, 5em);
+  bottom: 2em;
+  right: 32;
+  transform: translate(32em, -5em);
   z-index: 100;
   display: none;
   width: 20%;
@@ -111,5 +115,19 @@ input:focus {
 @media screen and (max-width: 720px) {
   .loginForm {
     width: 90%;
+  }
+  .successSign {
+    bottom: 2em;
+    right: 5em;
+    transform: translate(5em, -2em);
+    width: 70%;
+  }
+}
+@media screen and (min-width: 720px) {
+  .successSign {
+    bottom: 2em;
+    right: 5em;
+    transform: translate(5em, -2em);
+    width: 40%;
   }
 }
