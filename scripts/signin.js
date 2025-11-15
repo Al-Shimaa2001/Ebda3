@@ -6,6 +6,7 @@ const confirmPassword = document.querySelector("#confirmPassword");
 const successSign = document.querySelector(".successSign");
 const error = document.querySelector(".error");
 const errorLength = document.querySelector(".errorLength");
+export let Info = [{}];
 signUpBtn.addEventListener("click", () => {
   if (
     !fullName.value ||
@@ -32,7 +33,13 @@ function handelSuccessSign() {
   setTimeout(() => {
     successSign.style.display = "none";
   }, 6000);
-
+  Info.push({
+    fullName: fullName.value,
+    email: email.value,
+    password: password.value,
+    confirmPassword: confirmPassword.value,
+  });
+  saveInfo();
   signUpBtn.href = "./loginPage.html";
 }
 
@@ -56,4 +63,7 @@ function handelPasswordLength() {
   setTimeout(() => {
     errorLength.style.display = "none";
   }, 3000);
+}
+export function saveInfo() {
+  localStorage.setItem("signInfo", JSON.stringify(Info));
 }
