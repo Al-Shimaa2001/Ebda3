@@ -30,17 +30,17 @@ document.querySelector("#shopping_now").addEventListener("click", function () {
 //  list of shopping options
 const shopping = {
   electronic: {
-    img: "./images/اجهزه الكترونيه.png",
+    img: "./images/electronics_1.png",
     alt: "electronic devices",
     description: "اجهزه الكترونيه",
   },
   headphones: {
-    img: "./images/السماعات.png",
+    img: "./images/headphone_1.png",
     alt: "headphones",
     description: "السماعات",
   },
   battery: {
-    img: "./images/الشواحن.png",
+    img: "./images/wires_1.png",
     alt: "battery",
     description: " الشواحن والبطاريات",
   },
@@ -91,7 +91,7 @@ devices.map((ele) => {
   let showElement = `
         <div class="card cardDevices cardDevice" 
         title="اضغط مرتين للاضافة الى المفضله">
-        <img src="${ele.img}" alt="electronics" class='eleImg'
+        <img src="${ele.img}" alt="${ele.title}" class='eleImg'
            loading="lazy"/>
         <p class='eleTitle'>${ele.title}</p>
         <div class="details">${ele.description}</div>
@@ -140,7 +140,7 @@ headphones.forEach((ele) => {
   <div class="card cardDevices cardDevice"
              data-aos="zoom-in"
              title="اضغط مرتين للاضافة الى المفضله">
- <img src="${ele.img}" alt="electronics" class='eleImg' loading="lazy" />
+ <img src="${ele.img}" alt="${ele.title}" class='eleImg' loading="lazy" />
  <p class='eleTitle'>${ele.title}</p>
  <div class="details">${ele.description}</div>
  <p class='salary'>${ele.price}ر.س</p>
@@ -177,7 +177,7 @@ let batterySection = "";
 battery.forEach((ele) => {
   batterySection += `
    <div class="card cardDevices cardDevice" title="اضغط مرتين للاضافة الى المفضله" >
-        <img src="${ele.img}" alt="electronics" class='eleImg' loading="lazy" 
+        <img src="${ele.img}" alt="${ele.title}" class='eleImg' loading="lazy" 
        />
         <p class='eleTitle'>${ele.title}</p>
         <div class="details">${ele.description}</div>
@@ -189,9 +189,8 @@ battery.forEach((ele) => {
         </div>`;
 });
 
-document.querySelector(
-  ".batteryCards"
-).innerHTML = `${firstCardBattery}  ${batterySection}`;
+document.querySelector(".batteryCards").innerHTML =
+  `${firstCardBattery}  ${batterySection}`;
 document.querySelectorAll(".batteryAddToCart").forEach((addToCart) => {
   addToCart.addEventListener("click", () => {
     let batteryId = addToCart.dataset.batteryId;
@@ -245,7 +244,6 @@ scrollToTop.addEventListener("click", function (e) {
 });
 
 let date = new Date();
-document.querySelector(
-  ".date"
-).innerHTML = ` الحقوق محفوظه | TEQZON ${date.getFullYear()}
+document.querySelector(".date").innerHTML =
+  ` الحقوق محفوظه | TEQZON ${date.getFullYear()}
      `;
